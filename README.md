@@ -32,6 +32,7 @@ Training the model using GroupKFold across users returns 10 AUC scores, each sco
 
 Instead of estimation of **mean AUC** across users which trends to overfitting to a particular user and not guarantees generalization on the overall population, an alternative approach is proposed:
 
+![FFT](/pictures/Statscore.png)
 
 According to the formula, modeling is trending to estimate not only a mean of the score but a standard deviation as well: as higher mean, as higher the score; as higher std, as lower a score.
 
@@ -43,7 +44,7 @@ The objective of the model is to minimize some metric (e.g. RMSE), the parameter
 
 
 ```
-score = Statscore(mode='max')
+score = Statscore(mode='min')
 
 ```
 In this case, the input vector of the metric will be reversed to keep the equation above.
