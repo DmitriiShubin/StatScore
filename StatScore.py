@@ -13,8 +13,9 @@ np.random.seed(42)
 class StatScore:
     
     #initialize the class
-    def __init__(self,n_boost = 100000, mode='max',verbosity=False):
+    def __init__(self,n_boost = 100000, mode='max',verbosity=False, coef = 0):
         self.mode = mode
+        self.coef = coef
         
         if not((mode == 'max') | (mode == 'min')):
             raise ValueError('Parameter "Mode" should be equal to "max" or "min"')
@@ -67,7 +68,7 @@ class StatScore:
             val_precision = (np.mean(meanDist))
 
             #evaluate the statistical significance according to 3-sigma rule:
-            val_recall = 1/(np.mean(stdDist)+1)
+            val_recall = 1/(np.mean(stdDist)+self.coef)
 
 
             return val_precision / val_recall,val_precision
