@@ -55,7 +55,7 @@ Benefits of using this criterion for model performance estimation:
 1. provide a stable model and prevents overfitting
 2. provide an ability to cauterize users and train a separate model for them.
 
-# Examples of usage
+# Code examples
 
 ```
 
