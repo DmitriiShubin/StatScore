@@ -27,7 +27,8 @@ Training the model using GroupKFold across users returns 10 AUC scores, each sco
 | 1     | 0.5    |
 | 2    | 0.6  |
 | 3  | 0.7  |
-| ...           | 0.8               | 
+| ...           | ...               | 
+| 10          | 0.8               | 
 
 Instead of estimation of **mean AUC** across users which trends to overfitting to a particular user and not guarantees generalization on the overall population, an alternative approach is proposed:
 
